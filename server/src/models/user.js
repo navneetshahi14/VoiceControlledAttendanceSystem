@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   otp: { type: String },
   otpExpires: { type: Date },
   isVerified: { type: Boolean, default: false },
+  role:{type:String, enum: ['student', 'teacher','admin'], default: 'student'},
 });
 
 module.exports = mongoose.model("User", userSchema);

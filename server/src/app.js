@@ -5,6 +5,7 @@ require("dotenv").config();
 require("./passport");
 
 const authRoutes = require("./routes/authRoutes");
+const teacherRoutes = require("./routes/teacher.route");
 
 const app = express();
 
@@ -14,5 +15,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/auth", authRoutes);
+app.use('/teacher',teacherRoutes);
 
 module.exports = app;
